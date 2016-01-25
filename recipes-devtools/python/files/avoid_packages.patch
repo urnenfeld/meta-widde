@@ -1,0 +1,17 @@
+--- pushetta.py	2015-04-02 21:11:31.000000000 +0200
++++ pushetta-1.0.15/pushetta/pushetta.py	2016-01-25 11:29:21.969369502 +0100
+@@ -22,8 +22,12 @@
+ # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ # THE SOFTWARE.
+ 
+-import future 
+-import paho.mqtt.client as mqtt
++try:
++  import future 
++  import paho.mqtt.client as mqtt
++except:
++  pass
++
+ import re
+ import json
+ import uuid
