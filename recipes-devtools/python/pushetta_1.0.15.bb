@@ -10,7 +10,8 @@ S = "${WORKDIR}/${SRCNAME}-${PV}"
 
 # This patch avoid the inclusion of the mqtt and future package
 # Therefore subscription is not working with this recipe
-# Try creating antoher recipe in the future: https://pypi.python.org/pypi/paho-mqtt/1.1
+# We would need to depend on meta-oe 
+# --> http://cgit.openembedded.org/cgit.cgi/meta-openembedded/tree/meta-python/recipes-devtools/python/python-paho-mqtt_1.1.bb?h=master
 SRC_URI = "http://pypi.python.org/packages/source/p/pushetta/${SRCNAME}-${PV}.tar.gz \
 	   file://avoid_packages.patch"
 
