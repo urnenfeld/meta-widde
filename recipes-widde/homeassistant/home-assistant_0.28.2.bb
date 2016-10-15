@@ -29,7 +29,7 @@ RDEPENDS_${PN} += "python3-typing python3-voluptuous"
 
 
 ### Execution dependencies
-## netdisco requires netifaces which tries to compile, but fails to install in target HA own repo
+## netdisco requires netifaces which tries to compile, but fails to install as we dont pretend to include a complete toolchain
 # http://git.yoctoproject.org/cgit/cgit.cgi/meta-maker/tree/recipes-python/netifaces?h=fido
 RDEPENDS_${PN} += "python3-netifaces"
 
