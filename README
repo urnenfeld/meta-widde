@@ -1,5 +1,5 @@
 This README file contains information on the contents of the
-pushetta layer.
+widde layer.
 
 Please see the corresponding sections below for details.
 
@@ -13,18 +13,18 @@ This layer depends on:
   branch: master
 
   URI: git://git.openembedded.org/openembedded-core
-  layers: meta
-  branch: master
+  layers: meta-oe meta-python
+  branch: krogoth
 
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
-  branch: master
+  URI: git://git.yoctoproject.org/poky
+  layers: meta meta-yocto meta-yocto-bsp
+  branch: krogoth
 
 
 Patches
 =======
 
-Please submit any patches against the pushetta layer to the
+Please submit any patches against the widde layer to the
 xxxx mailing list (xxxx@zzzz.org) and cc: the maintainer:
 
 Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
@@ -33,32 +33,34 @@ Maintainer: XXX YYYYYY <xxx.yyyyyy@zzzzz.com>
 Table of Contents
 =================
 
-  I. Adding the pushetta layer to your build
+  I. Adding the widde layer to your build
  II. Misc
 
 
-I. Adding the pushetta layer to your build
+I. Adding the widde layer to your build
 =================================================
 
---- replace with specific instructions for the pushetta layer ---
+--- replace with specific instructions for the widde layer ---
 
 In order to use this layer, you need to make the build system aware of
 it.
 
-Assuming the pushetta layer exists at the top-level of your
+Assuming the widde layer exists at the top-level of your
 yocto build tree, you can add it to the build system by adding the
-location of the pushetta layer to bblayers.conf, along with any
+location of the widde layer to bblayers.conf, along with any
 other layers needed. e.g.:
 
   BBLAYERS ?= " \
     /path/to/yocto/meta \
     /path/to/yocto/meta-yocto \
     /path/to/yocto/meta-yocto-bsp \
-    /path/to/yocto/meta-pushetta \
+    /path/to/yocto/meta-widde \
+    /path/to/meta-openembedded/meta-oe \  
+    /path/to/meta-openembedded/meta-python \
     "
 
 
 II. Misc
 ========
 
---- replace with specific information about the pushetta layer ---
+--- replace with specific information about the widde layer ---
