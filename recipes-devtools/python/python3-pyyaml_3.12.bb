@@ -7,11 +7,10 @@ DEPENDS = "libyaml python-cython-native"
 
 SRC_URI = "http://pyyaml.org/download/pyyaml/PyYAML-${PV}.tar.gz \
 "
-
 #           file://setup.py
 
-SRC_URI[md5sum] = "f50e08ef0fe55178479d3a618efe21db"
-SRC_URI[sha256sum] = "c36c938a872e5ff494938b33b14aaa156cb439ec67548fcab3535bb78b0846e8"
+SRC_URI[md5sum] = "4c129761b661d181ebf7ff4eb2d79950"
+SRC_URI[sha256sum] = "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
 
 S = "${WORKDIR}/PyYAML-${PV}"
 
@@ -20,7 +19,6 @@ inherit distutils3
 do_configure_prepend() {
     # upstream setup.py overcomplicated, use ours
     # install -m 0644 ${WORKDIR}/setup.py ${S}
-    echo wow
 }
 
-BBCLASSEXTEND = "native"
+BBCLASSEXTEND = "native nativesdk"
