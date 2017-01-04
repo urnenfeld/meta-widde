@@ -10,6 +10,7 @@
 
 # /etc/init.d Service Script for Home Assistant
 # Created with: https://gist.github.com/naholyr/4275302#file-new-service-sh
+# Docs: https://home-assistant.io/getting-started/autostart-init.d/
 PRE_EXEC=""
 RUN_AS="USER"
 PID_FILE="/var/run/hass.pid"
