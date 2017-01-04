@@ -12,7 +12,7 @@
 # Created with: https://gist.github.com/naholyr/4275302#file-new-service-sh
 # Docs: https://home-assistant.io/getting-started/autostart-init.d/
 PRE_EXEC=""
-RUN_AS="USER"
+RUN_AS="root"
 PID_FILE="/var/run/hass.pid"
 CONFIG_DIR="/var/opt/homeassistant"
 FLAGS="-v --config $CONFIG_DIR --pid-file $PID_FILE --daemon"
