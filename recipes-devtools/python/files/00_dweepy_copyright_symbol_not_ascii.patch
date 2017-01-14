@@ -1,0 +1,11 @@
+diff --git a/README.rst b/README.rst
+index 4d60d5c..08fc6d0 100644
+--- a/README.rst
++++ b/README.rst
+@@ -263,5 +263,5 @@ Once in place, you can run your tests locally with::
+ Copyright & License
+ -------------------
+ 
+-| Copyright © 2014 Patrick Carey (https://github.com/paddycarey)
++| Copyright (C) 2014 Patrick Carey (https://github.com/paddycarey)
+ | Licensed under the **MIT** license.
