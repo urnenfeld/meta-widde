@@ -8,14 +8,14 @@ SRCNAME = "home-assistant"
 S = "${WORKDIR}/${SRCNAME}-${PV}"
 
 SRC_URI = "https://github.com/home-assistant/home-assistant/archive/${PV}.zip \
-           file://home-assistant.init"
+           file://hass-daemon"
 
 inherit setuptools3 update-rc.d
 # systemd ?
 
 ### Installation dependencies
 ## Python packages provided in meta-oe
-RDEPENDS_${PN} += "python3 python3-core python3-modules python3-misc python3-pip python3-jinja2 python3-requests"
+RDEPENDS_${PN} += "python3 python3-modules python3-pip python3-jinja2 python3-requests"
 
 ## An inner dependency, python package provided inside the python manifest
 RDEPENDS_${PN} += "python3-sqlite3"
@@ -39,7 +39,7 @@ RDEPENDS_${PN} += "python3-netifaces"
 SYSTEMD_SERVICE_${PN} = "home-assistant@.service"
 
 # sysv init
-INITSCRIPT_NAME = "home-assistant.init"
+INITSCRIPT_NAME = "hass-daemon"
 INITSCRIPT_PARAMS = "defaults 80"
 
 SRC_URI[md5sum] = "15f6c7b755bded8f8700b1b71310a452"
@@ -48,5 +48,12 @@ SRC_URI[sha256sum] = "20b3e884b65738afac42f70b4cb5469ebd6dce869fc468ee53dbb4f554
 do_install_append () {
     install -d ${D}${INIT_D_DIR}
     install -m 0755 ../${INITSCRIPT_NAME} ${D}${INIT_D_DIR}/
+
+    # Ensure the creation of the CONFIG_DIR used in the hass-daemon script
+    # TODO: Configure this
+    install -d ${D}${localstatedir}/opt/homeassistant
+
+    # TODO: Edit hass-daemon script to set the USER variable within this recipe(defaulted to root)
+
 }
 
