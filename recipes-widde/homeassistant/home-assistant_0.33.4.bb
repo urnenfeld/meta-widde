@@ -24,7 +24,7 @@ RDEPENDS_${PN} += "python3-sqlite3"
 RDEPENDS_${PN} += "python3-pyyaml python3-pytz"
 
 ## Recipes created specially
-RDEPENDS_${PN} += "python3-typing python3-voluptuous"
+RDEPENDS_${PN} += "python3-typing python3-voluptuous python3-aiohttp python3-async-timeout"
 
 ## Dependecies found in external layers but somehow satisfied during the process
 # MarkupSafe: http://git.yoctoproject.org/cgit/cgit.cgi/meta-cloud-services/tree/meta-openstack/recipes-devtools/python/python-markupsafe_0.18.bb or http://git.yoctoproject.org/cgit/cgit.cgi/meta-maker/tree/recipes-python/markupsafe/python-markupsafe_git.bb?h=dizzy
@@ -42,11 +42,8 @@ SYSTEMD_SERVICE_${PN} = "home-assistant@.service"
 INITSCRIPT_NAME = "hass-daemon"
 INITSCRIPT_PARAMS = "defaults 80"
 
-SRC_URI[md5sum] = "5c51735a67cbf05b8903c7c45387b67d"
-SRC_URI[sha256sum] = "eb4f46c06e227b97af5506fafb93c29e74c9fa11bcd1c2f943718bb104c5db0a"
-
-
-
+SRC_URI[md5sum] = "15f6c7b755bded8f8700b1b71310a452"
+SRC_URI[sha256sum] = "20b3e884b65738afac42f70b4cb5469ebd6dce869fc468ee53dbb4f5542cc0ef"
 
 do_install_append () {
     install -d ${D}${INIT_D_DIR}
