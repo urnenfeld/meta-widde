@@ -6,9 +6,6 @@ LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=22b38951eb857cf285a4560a914b7cd6"
 SRC_URI[md5sum] = "8660ba7c3c0abd23e6e4efa493b02966"
 SRC_URI[sha256sum] = "8787de03f35f31699bcaf127e56ad14c00647965ed24d72dbaca87c6e4f843a3"
 
-# kogroth will only fetch in pypi
-PYPI_SRC_URI = "https://files.pythonhosted.org/packages/source/p/pytz/pytz-${PV}.tar.gz"
-
 inherit pypi setuptools3
 
 RDEPENDS_${PN} = "\
