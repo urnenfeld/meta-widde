@@ -8,12 +8,17 @@ SRCNAME = "home-assistant"
 S = "${WORKDIR}/${SRCNAME}-${PV}"
 
 SRC_URI = "https://github.com/home-assistant/home-assistant/archive/${PV}.zip \
-           file://hass-daemon"
+    file://hass-daemon \
+    file://00_avoid_using_local_environmnet.patch"
+
 
 inherit setuptools3 update-rc.d
 # systemd ?
 
 ### Installation dependencies
+## "libgcc_s.so.1 must be installed for pthread_cancel to work"
+RDEPENDS_${PN} += "libstdc++"
+
 ## Python packages provided in meta-oe
 RDEPENDS_${PN} += "python3 python3-modules python3-pip python3-jinja2 python3-requests"
 
