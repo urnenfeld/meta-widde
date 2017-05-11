@@ -40,7 +40,7 @@ SYSTEMD_SERVICE_${PN} = "home-assistant@.service"
 
 # sysv init
 INITSCRIPT_NAME = "hass-daemon"
-INITSCRIPT_PARAMS = "defaults 80"
+INITSCRIPT_PARAMS = "defaults 92"
 
 SRC_URI[md5sum] = "15f6c7b755bded8f8700b1b71310a452"
 SRC_URI[sha256sum] = "20b3e884b65738afac42f70b4cb5469ebd6dce869fc468ee53dbb4f5542cc0ef"
