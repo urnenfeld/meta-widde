@@ -1,0 +1,21 @@
+--- a/homeassistant/util/package.py	2016-09-13 06:28:57.000000000 +0200
++++ b/homeassistant/util/package.py	2016-09-30 19:12:22.000000000 +0200
+@@ -22,15 +22,15 @@
+     """
+     # Not using 'import pip; pip.main([])' because it breaks the logger
+     with INSTALL_LOCK:
+-        if check_package_exists(package, target):
++        if check_package_exists(package, None):
+             return True
+ 
+         _LOGGER.info('Attempting install of %s', package)
+         args = [sys.executable, '-m', 'pip', 'install', '--quiet', package]
+         if upgrade:
+             args.append('--upgrade')
+-        if target:
+-            args += ['--target', os.path.abspath(target)]
++        # if target:
++        #   args += ['--target', os.path.abspath(target)]
+ 
+         try:
+             return subprocess.call(args) == 0
